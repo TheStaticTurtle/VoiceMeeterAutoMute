@@ -1,0 +1,14 @@
+C:\Users\tugle\source\repos\MutedOverlayReceiver\MutedOverlayReceiver\bin\Debug\MutedOverlayReceiver.exe.config
+C:\Users\tugle\source\repos\MutedOverlayReceiver\MutedOverlayReceiver\bin\Debug\MutedOverlayReceiver.exe
+C:\Users\tugle\source\repos\MutedOverlayReceiver\MutedOverlayReceiver\bin\Debug\MutedOverlayReceiver.pdb
+C:\Users\tugle\source\repos\MutedOverlayReceiver\MutedOverlayReceiver\bin\Debug\Fizzler.dll
+C:\Users\tugle\source\repos\MutedOverlayReceiver\MutedOverlayReceiver\bin\Debug\Svg.dll
+C:\Users\tugle\source\repos\MutedOverlayReceiver\MutedOverlayReceiver\bin\Debug\Svg.xml
+C:\Users\tugle\source\repos\MutedOverlayReceiver\MutedOverlayReceiver\obj\Debug\MutedOverlayReceiver.csprojAssemblyReference.cache
+C:\Users\tugle\source\repos\MutedOverlayReceiver\MutedOverlayReceiver\obj\Debug\MutedOverlayReceiver.Form1.resources
+C:\Users\tugle\source\repos\MutedOverlayReceiver\MutedOverlayReceiver\obj\Debug\MutedOverlayReceiver.Properties.Resources.resources
+C:\Users\tugle\source\repos\MutedOverlayReceiver\MutedOverlayReceiver\obj\Debug\MutedOverlayReceiver.csproj.GenerateResource.cache
+C:\Users\tugle\source\repos\MutedOverlayReceiver\MutedOverlayReceiver\obj\Debug\MutedOverlayReceiver.csproj.CoreCompileInputs.cache
+C:\Users\tugle\source\repos\MutedOverlayReceiver\MutedOverlayReceiver\obj\Debug\MutedOverlayReceiver.csproj.CopyComplete
+C:\Users\tugle\source\repos\MutedOverlayReceiver\MutedOverlayReceiver\obj\Debug\MutedOverlayReceiver.exe
+C:\Users\tugle\source\repos\MutedOverlayReceiver\MutedOverlayReceiver\obj\Debug\MutedOverlayReceiver.pdb
