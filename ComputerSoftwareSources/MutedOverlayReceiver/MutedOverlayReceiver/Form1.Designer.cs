@@ -70,8 +70,9 @@
 			this.ClientSize = new System.Drawing.Size(173, 240);
 			this.Controls.Add(this.svgImage);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Form1";
-			this.Text = "Form1";
+			this.Text = "Muted";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			((System.ComponentModel.ISupportInitialize)(this.svgImage)).EndInit();
 			this.ResumeLayout(false);

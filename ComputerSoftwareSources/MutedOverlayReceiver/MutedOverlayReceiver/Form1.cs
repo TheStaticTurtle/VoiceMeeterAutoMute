@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Runtime.InteropServices;
@@ -32,7 +33,7 @@ namespace MutedOverlayReceiver {
 
 		public Form1() {
 			InitializeComponent();
-			vbt = new VBANText(IPAddress.Parse("127.0.0.1"), 6980);
+			vbt = new VBANText(IPAddress.Parse(MutedOverlayReceiver.Properties.Settings.Default.VoicemeeterIP), MutedOverlayReceiver.Properties.Settings.Default.VoicemeeterPort);
 		}
 
 		private void recolorSVGDoc(IEnumerable<SvgElement> nodes, SvgPaintServer colorServer) {
@@ -50,8 +51,9 @@ namespace MutedOverlayReceiver {
 			this.Size = svgImage.Size;
 
 
-
-			svgDoc = SvgDocument.Open("C:\\Users\\tugle\\Downloads\\microphone-black-shape.svg");
+			string fileName = System.IO.Path.GetTempPath() + Guid.NewGuid().ToString() + ".svg";
+			File.WriteAllBytes(fileName, MutedOverlayReceiver.Properties.Resources.microphone_black_shape);
+			svgDoc = SvgDocument.Open(fileName);
 			recolorSVGDoc(svgDoc.Descendants(), new SvgColourServer(Color.FromArgb(255, 255, 64, 0)));
 			svgImage.Image = svgDoc.Draw();
 			timer1.Enabled = true;
@@ -62,7 +64,13 @@ namespace MutedOverlayReceiver {
 			RegisterHotKey(this.Handle, UNMUTE_HOTKEY_ID, 3, (int)Keys.F3); ;
 
 			this.notifyIcon1.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip();
+			this.notifyIcon1.ContextMenuStrip.Items.Add("Settings", null, this.MenuSettings_Click);
 			this.notifyIcon1.ContextMenuStrip.Items.Add("Exit", null, this.MenuExit_Click);
+		}
+
+		private void MenuSettings_Click(object sender, EventArgs e) {
+			FormSettings f = new FormSettings();
+			f.Show();
 		}
 
 		private void MenuExit_Click(object sender, EventArgs e) {
@@ -118,12 +126,12 @@ namespace MutedOverlayReceiver {
 		void oneShotMute() {
 			Console.WriteLine("MUTE");
 			muted = true;
-			vbt.send("Strip(0).Mute = 1");
+			vbt.send(MutedOverlayReceiver.Properties.Settings.Default.VoicemeeterStream, "Strip(0).Mute = 1");
 		}
 		void oneShotUnMute() {
 			Console.WriteLine("UNMUTE");
 			muted = false;
-			vbt.send("Strip(0).Mute = 0");
+			vbt.send(MutedOverlayReceiver.Properties.Settings.Default.VoicemeeterStream, "Strip(0).Mute = 0");
 		}
 	}
 }

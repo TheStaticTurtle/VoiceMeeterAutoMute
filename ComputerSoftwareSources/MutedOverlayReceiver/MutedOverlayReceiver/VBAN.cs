@@ -18,7 +18,9 @@ namespace MutedOverlayReceiver {
             endPoint = new IPEndPoint(addr, port);
         }
 
-        public void send(String text) {
+        public void send(String streamName, String text) {
+            streamName += "\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            char[] a = streamName.ToCharArray();
 
             char[] send_buffer = {
                 'V','B','A','N',
@@ -26,7 +28,7 @@ namespace MutedOverlayReceiver {
                 (char)0x00,
                 (char)0x00,
                 (char)0x01,
-                'C','o','m','m','a','n','d','1','\0','\0','\0','\0','\0','\0','\0','\0',
+                a[0],a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8],a[9],a[10],a[11],a[12],a[13],a[14],a[15],
                 '\0','\0','\0','\0'
             };
 
